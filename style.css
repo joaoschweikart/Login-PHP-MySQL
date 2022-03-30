@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Sarala&family=Titillium+Web&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.cabecalho {
+  font-family: Sarala, sans-serif;
+  font-size: 25pt;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -20px;
+}
+
+.login {
+  width: 500px;
+  height: 280px;
+  margin: 3% auto;
+  padding: 20px;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-family: Sarala, sans-serif;
+  font-size: 1.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form {
+  border-bottom: 1px solid black;
+}
+
+.erro {
+  color: red; 
+  font-size: 12pt; 
+  padding: 0px 0px 10px 0px;
+}
+
+.options {
+  margin-top: 20px;
+  font-size: 12pt;
+  text-align: left;
+}
+
+.button {
+  font-size: 15pt;
+  display: inline-block;
+  border: 1px solid #3079ED;
+  border-radius: 1px;
+  width: 100px;
+  height: 35px;
+  text-align: center;
+  margin: 8px 4px 10px 0;
+  vertical-align: top;
+  cursor: pointer;
+  color: #FFF;
+  background-color: #4d90fe;
+  transition: all .2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+input{
+  font-weight: normal;
+  font-size: 15pt;
+}
+
+input:hover {
+    background-color: lightgray;
+}
