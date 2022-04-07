@@ -6,32 +6,32 @@ session_start()
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LOGIN</title>
+  <title>ESQUECI MINHA SENHA</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="cabecalho">LOGIN</header>
+  <header class="cabecalho">NOVA SENHA</header>
   <main class="conteudos">
     <section class="login">
       <?php
       if(isset($_SESSION['nao-autenticado'])):
       ?>
-      <div class="erro">ERRO! E-mail ou Senha estão incorretos</div>
+      <div class="erro">ERRO! O usuário digitado não existe ou as senhas não coincidem</div>
       <div>
       <?php
       endif;
       unset($_SESSION['nao-autenticado']);
       ?>
-        <form action="bancodedados.php" method="post">
+        <form action="mudarsenha.php" method="post">
           <div class="form">
             <p><label for="email">Usuário: </label><input id="usuario" name="usuario" type="text" placeholder="Usuário"></p>
-            <p><label for="senha">Senha: </label><input id="senha" name="senha" type="password" placeholder="Senha"></p>
-            <button type="submit" class="button">Entrar</button>
+            <p><label for="senha">Nova senha: </label><input id="novasenha" name="novasenha" type="password" placeholder="Nova senha"></p>
+            <p><label for="senha">Confirmar: </label><input id="confirmarsenha" name="confirmarsenha" type="password" placeholder="Confirmar nova senha"></p>
+            <button type="submit" class="button">Confirmar</button>
           </div>
         </form>
         <div class="options">
           <div><a href="registro.php">Não tem conta? Registre-se aqui.</a></div>
-          <div><a href="novasenha.php">Esqueceu sua senha? Crie uma nova aqui.</a></div>
         </div>
       </div>
     </section>
