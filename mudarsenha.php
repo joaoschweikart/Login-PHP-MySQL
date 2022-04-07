@@ -1,7 +1,7 @@
 <?php
   session_start();
   include("conexao.php");
-  if(empty($_POST['usuario']) or empty($_POST['senha']) or empty($_POST['novasenha'])) {
+  if(empty($_POST['usuario']) or empty($_POST['novasenha']) or empty($_POST['confirmarsenha'])) {
     header('Location: index.php');
     exit();
   }
@@ -9,6 +9,7 @@
   $novasenha = mysqli_real_escape_string($conexao, $_POST['novasenha']);
   $confirmarsenha = mysqli_real_escape_string($conexao, $_POST['confirmarsenha']);
   if ($novasenha == $confirmarsenha) {
+    $novasenha = password_hash(mysqli_real_escape_string($conexao, $_POST['novasenha']), PASSWORD_DEFAULT);
     $sql1="UPDATE site.users SET senha = '$novasenha' WHERE usuario = '$usuario';";
     mysqli_query($conexao, $sql1);
     $sql2="SELECT * from site.users where usuario = '$usuario' and senha = '$novasenha';";

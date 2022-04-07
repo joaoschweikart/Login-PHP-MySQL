@@ -6,7 +6,7 @@
     exit();
   }
   $usuario = mysqli_real_escape_string($conexao, $_POST['usuario']);
-  $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
+  $senha = password_hash(mysqli_real_escape_string($conexao, $_POST['senha']), PASSWORD_DEFAULT);
   $sql="INSERT INTO site.users(id, usuario, senha) values (default, '$usuario', '$senha');";
   if(mysqli_query($conexao, $sql)) {
     $_SESSION['usuario'] = $usuario;
